@@ -1,1 +1,1 @@
-Hi it is my first flask projejfhsjhfjhfjsht.
+Hi it is a project on url shortner.
