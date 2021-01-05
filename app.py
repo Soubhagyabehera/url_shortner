@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 
 app=Flask(__name__)
 
@@ -6,9 +6,13 @@ app=Flask(__name__)
 def home():
 	return render_template('home.html')
 
-@app.route("/about")
-def about():
-	return "With url_shortner can shorten the link you provide"
+@app.route("/your-url",methods=['GET','POST'])
+def your_url():
+	if request.method== 'POST':
+		return render_template('your_url.html',code=request.form['code']) #if it is post request then request.form['--']
+																		  #else request.args['']'''
+	else:
+		return "This is not valid"
 
 
 if __name__=="__main__":
